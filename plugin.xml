@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ 
+<plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
+           id="com.brentsys.cordova.pincode"
+      version="0.1.0">
+    <name>Pincode</name>
+    <description>Sample Pincode Dialog Plugin</description>
+    <license>MIT</license>
+    <keywords>pincode,dialog</keywords>
+ 
+ 
+    <js-module src="www/pincode.js" name="Pincode">
+        <clobbers target="pincode" />
+    </js-module>
+ 
+    <!-- android -->
+    <platform name="android">
+
+        <config-file target="AndroidManifest.xml" parent="/manifest/application">
+            <activity
+                android:name="com.brentsys.pincode.InputActivity">
+                <intent-filter />
+            </activity>
+        </config-file>
+
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="Pincode">
+                <param name="android-package" value="com.brentsys.cordova.Pincode"/>
+            </feature>
+        </config-file>
+
+        <source-file src="src/android/Pincode.java" target-dir="src/com/brentsys/cordova" />     
+        <source-file src="src/android/Library/src/InputActivity.java" target-dir="src/com/brentsys/pincode" />     
+        <source-file src="src/android/Library/src/Utils.java" target-dir="src/com/brentsys" /> 
+        <source-file src="src/android/Library/src/FakeR.java" target-dir="src/com/brentsys" /> 
+        <source-file src="src/android/Library/res/layout/activity_input.xml" target-dir="res/layout" />
+        <source-file src="src/android/Library/res/values/dimens.xml" target-dir="res/values" />
+        <source-file src="src/android/Library/res/values/styles.xml" target-dir="res/values" />
+
+        <!-- plugman cannot merge - prepare manual merge -->
+        <config-file target="res/values/strings.xml" parent="/resources">
+            <string name="app_name">PinCodeExample</string>
+            <string name="hello_world">Click to enter PIN code</string>
+            <string name="action_settings">Settings</string>
+            <string name="info">Info</string>
+            <string name="title_activity_test">TestActivity</string>
+            <string name="clear">Effacer</string>
+        </config-file>
+     </platform>         
+</plugin>
