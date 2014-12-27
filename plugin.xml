@@ -2,9 +2,9 @@
  
 <plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
            id="com.brentsys.cordova.pincode"
-      version="0.1.0">
+      version="0.1.1">
     <name>Pincode</name>
-    <description>Sample Pincode Dialog Plugin</description>
+    <description>Pincode Dialog Plugin</description>
     <license>MIT</license>
     <keywords>pincode,dialog</keywords>
  
